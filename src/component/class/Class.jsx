@@ -35,7 +35,7 @@ class Class extends React.Component {
         if (this.state.classDetails) {
             return(
                 <div className="class-details-period"> 
-                    <ClassContainer collection={this.state.classDetails} />;
+                    <ClassContainer collection={this.state.classDetails} />
                 </div>
             );
         } else if (!this.state.hasClassDetails) {

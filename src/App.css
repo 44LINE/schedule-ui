@@ -126,6 +126,7 @@ body {
 }
 
 .class-details-period {
+  padding-bottom: 4vh;
   transition-duration: 0.8s;
   font-size: calc(8px + 2vmin);
 }
