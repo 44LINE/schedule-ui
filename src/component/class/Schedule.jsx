@@ -36,7 +36,7 @@ class Schedule extends React.Component {
                     <div className="FOREIGN_LANGUAGE">ANGIELSKI</div>
                     <div className="EXERCISE">ĆWICZENIA</div>
                     <div className="LAB">LABORATORIUM</div>
-                    <ScheduleContainer collection={this.state.groupedDailySchedules} groupId={this.state.groupId}/>;
+                    <ScheduleContainer collection={this.state.groupedDailySchedules} groupId={this.state.groupId}/>
                 </div>
             );
         } else {
