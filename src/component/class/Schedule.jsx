@@ -31,7 +31,11 @@ class Schedule extends React.Component {
         if (this.state.groupedDailySchedules) {
             return(
                 <div id="schedule-container"> 
-                    <h4 id="schedule-container-header">HARMONOGRAM DLA GRUPY {this.state.groupId}</h4>
+                    <h4 id="schedule-container-header">HARMONOGRAM DLA GRUPY {this.state.groupId} </h4>
+                    <div className="LECTURE">WYKŁAD</div>
+                    <div className="FOREIGN_LANGUAGE">ANGIELSKI</div>
+                    <div className="EXERCISE">ĆWICZENIA</div>
+                    <div className="LAB">LABORATORIUM</div>
                     <ScheduleContainer collection={this.state.groupedDailySchedules} groupId={this.state.groupId}/>;
                 </div>
             );

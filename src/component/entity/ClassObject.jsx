@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const RawClassObject = ({json}) => (
     //name, shortName, className
     <div>
-        <p>{json.shortName}</p>
+        <p>{json.name}</p>
     </div>
 );
 

@@ -73,6 +73,10 @@ body {
   margin-top: 0;
 }
 
+#schedule-container-header, h4 {
+  padding-bottom: 2vh;
+}
+
 #schedule-container {
   font-size: calc(10px + 2vmin);
   display: flex;
@@ -91,6 +95,7 @@ body {
   border: none;
   font-size: 5vh;
   transition-duration: 2s;
+  margin-bottom: 0;
 }
 
 .grouped-daily-schedule-button {
@@ -122,7 +127,35 @@ body {
 
 .class-details-period {
   transition-duration: 0.8s;
-  font-size: calc(5px + 2vmin);
+  font-size: calc(8px + 2vmin);
+}
+
+.FOREIGN_LANGUAGE {
+  padding-right: 1vh;
+  padding-left: 1vh;
+  padding-bottom: 0.1vh;
+  background-color:  rgba(52, 212, 79, 0.8);
+}
+
+.LECTURE {
+  padding-right: 1vh;
+  padding-bottom: 0.1vh;
+  padding-left: 1vh;
+  background-color:  rgba(52, 188, 212, 0.8);
+}
+
+.EXERCISE {
+  padding-right: 1vh;
+  padding-left: 1vh;
+  padding-bottom: 0.1vh;
+  background-color:  rgba(209, 212, 52, 0.8);
+}
+
+.LAB {
+  padding-right: 1vh;
+  padding-left: 1vh;
+  padding-bottom: 0.1vh;
+  background-color:  rgba(211, 62, 62, 0.8);
 }
 
 #small-logo{
