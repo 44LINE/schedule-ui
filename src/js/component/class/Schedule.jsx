@@ -1,28 +1,35 @@
 import React from 'react';
-import logo from '../../logo.svg';
-import { getGroupedDailySchedules } from '../../service/GroupedDailyScheduleService';
+import { getGroupedDailySchedules } from '../../service/api/GroupedDailyScheduleService';
 import ScheduleContainer from '../../container/ScheduleContainer';
+import UserService from '../../service/user.service';
+import '../../../style/schedule.css';
+
 
 class Schedule extends React.Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
-            groupId: props.groupId,
+            groupId: undefined,
             dataIsReturned: false,
             groupedDailySchedules: null
         };
     };
 
     componentDidMount() {
+        if (!UserService.isLogged()) {
+            this.props.history.push("/login");
+        }
+
         if (!this.state.groupedDailySchedules) {
             this.fetchData();
-        } 
+        }
     };
 
     fetchData = async () => {
         console.log("Fetching...");
+        this.state.groupId = UserService.getUserGroupId();
         this.state.groupedDailySchedules = await getGroupedDailySchedules(this.state.groupId);
-        if (this.state.groupedDailySchedules) {
+        if (this.state.groupId || this.state.groupedDailySchedules) {
             this.forceUpdate();
         }
     };
@@ -30,23 +37,18 @@ class Schedule extends React.Component {
     render() {
         if (this.state.groupedDailySchedules) {
             return(
-                <div id="schedule-container"> 
-                    <h4 id="schedule-container-header">HARMONOGRAM DLA GRUPY {this.state.groupId} </h4>
-                    <div className="LECTURE">WYKŁAD</div>
-                    <div className="FOREIGN_LANGUAGE">ANGIELSKI</div>
-                    <div className="EXERCISE">ĆWICZENIA</div>
-                    <div className="LAB">LABORATORIUM</div>
+                <div id="schedule-container" className="col-sm-12 align-items-center">
+                    <h3 className="pb-4">HARMONOGRAM DLA GRUPY {this.state.groupId} </h3>
                     <ScheduleContainer collection={this.state.groupedDailySchedules} groupId={this.state.groupId}/>
                 </div>
             );
         } else {
             return( 
-                <div id="loading-div">    
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h3>Powered by Redux</h3>
+                <div className="loading-spinner align-items-sm-center">
+                    <span className="spinner-border spinner-border-lg"></span>
                 </div>
             );
         }
     }
-};
+}
 export default Schedule;

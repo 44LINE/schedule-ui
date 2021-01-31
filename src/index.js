@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import HttpsRedirect from 'react-https-redirect';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <HttpsRedirect>
-  <React.StrictMode>
-    <main>
+      <BrowserRouter>
       <App />
-    </main>
-  </React.StrictMode>
+      </BrowserRouter>
   </HttpsRedirect>,
   document.getElementById('root')
 );
-reportWebVitals();

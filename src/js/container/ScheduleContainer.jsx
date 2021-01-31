@@ -5,7 +5,7 @@ const ScheduleContainer = ({collection}) => {
     if (collection) {
         return Object.keys(collection).map(key => {
         if (collection[key]._links) {
-            return <GroupedDailySchedule 
+            return <GroupedDailySchedule
                         groupId={collection[key].groupId}
                         date={collection[key].date}
                         selfLink={collection[key]._links.self.href}

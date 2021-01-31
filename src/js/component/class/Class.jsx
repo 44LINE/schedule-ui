@@ -1,7 +1,7 @@
 import React from 'react';
-import { fetchClassDetails } from '../../service/ClassDetailsService';
+import { fetchClassDetails } from '../../service/api/ClassDetailsService';
 import ClassContainer from '../../container/ClassContainer';
-import logo from '../../logo.svg';
+import logo from '../../../assets/logo.svg';
 
 
 class Class extends React.Component {
@@ -34,14 +34,18 @@ class Class extends React.Component {
     render() {
         if (this.state.classDetails) {
             return(
-                <div className="class-details-period"> 
+                <div className="class-details">
                     <ClassContainer collection={this.state.classDetails} />
                 </div>
             );
         } else if (!this.state.hasClassDetails) {
             return null;
         } else {
-            return <img src={logo} className="App-logo" id="small-logo" alt="logo" />;
+            return(
+                <div className="loading-spinner align-items-sm-center">
+                    <span className="spinner-border spinner-border-lg"></span>
+                </div>
+            );
         }
     }
 };

@@ -1,0 +1,73 @@
+#schedule-container {
+    background-color: inherit;
+    color: #ffffff;
+}
+
+h3 {
+    text-align: center;
+}
+
+.loading-spinner {
+    text-align: center;
+    font-size: x-large;
+    color: lightslategrey;
+}
+
+#schedule-container {
+    -webkit-transition: background-color 5000ms linear;
+    -ms-transition: background-color 5000ms linear;
+    transition: background-color 5000ms linear;
+    text-align: center;
+    transition-duration: 2s;
+    color: white;
+}
+
+#grouped-daily-schedule {
+    font-family: 'Arial', sans-serif;
+    -webkit-transition: background-color 5000ms linear;
+    -ms-transition: background-color 5000ms linear;
+    transition: background-color 5000ms linear;
+    margin-bottom: 1vh;
+}
+
+.grouped-daily-schedule-button {
+    font-family: 'Arial', sans-serif;
+    font-size: 2vh;
+    transition-duration: 1s;
+    border: none;
+    margin-top: 1vh;
+    padding: 1vh 8vw 1vh 8vw;
+}
+
+.grouped-daily-schedule-button:hover {
+    background-color: rgba(135, 19, 189, 0.8);
+}
+
+.class-details {
+    font-family: 'Arial', sans-serif;
+    align-items: center;
+    transition-duration: 1s;
+    font-size: 2vh;
+}
+
+.class-details-period {
+    font-size: 2vh;
+    transition-duration: 1s;
+}
+
+.FOREIGN_LANGUAGE {
+    background-color:  rgba(52, 212, 79, 0.3);
+}
+
+.LECTURE {
+    background-color:  rgba(52, 188, 212, 0.3);
+}
+
+.EXERCISE {
+    background-color:  rgba(209, 212, 52, 0.3);
+}
+
+.LAB {
+    background-color:  rgba(211, 62, 62, 0.3);
+}
+
